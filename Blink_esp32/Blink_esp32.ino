@@ -1,10 +1,4 @@
-#define LED_BUILTIN 2 // Define o pino do LED embutido (pode variar dependendo do modelo)
-void setup() {
-  pinMode(LED_BUILTIN, OUTPUT); // Define o pino do LED como saída
-}
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH); // Liga o LED
-  delay(1000);                    // Aguarda 1 segundo
-  digitalWrite(LED_BUILTIN, LOW);  // Desliga o LED
-  delay(1000);                    // Aguarda 1 segundo
-}
+//Escrever um código para fazer um LED piscar em um ESP32 usando a IDE do Arduino. 
+//O código deve definir o pino do LED como saída e, em seguida, alterna entre os estados HIGH (ligado) e LOW (desligado) 
+//com um atraso de tempo. 
+
