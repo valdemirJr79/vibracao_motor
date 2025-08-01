@@ -12,6 +12,7 @@
 
     You can later check the values at https://thingspeak.com/channels/2005329
     Please note that this public channel can be accessed by anyone and it is possible that more people will write their values.
+    aaa
  */
 
 #include <WiFi.h>
