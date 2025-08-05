@@ -1,8 +1,12 @@
-{
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  "version": "0.2.0",
-  "configurations": [
-  
-  ]
+#include <Wifi.h> //Importa a biblioteca que permite interagir com a rede Wi-Fi.
+                  // Necessária para obter o MAC.
+void setup(){
+  Serial.begin(115200); //Inicia a comunicação serial com o PC. Velocidade: 115200 bauds.
+  Serial.println("Obtendo endreço MAC..."); //Envia texto para o monitor serial. Você pode ver isso no Arduino IDE.
+  Serial.print("MAC address: "); 
+  Serial.println(Wifi.macAddress());// Retorna o endereço MAC da placa como uma String.
+}
+
+void loop{
+ 
 }
