@@ -1,3 +1,6 @@
+//O objetivo do código é conectar o microcontrolador a uma rede WiFi, se comunicar com um servidor MQTT,
+ //ler um sensor analógico (luminosidade, por exemplo), e controlar dois LEDs com comandos recebidos via MQTT.
+ 
 #include <WiFi.h>
 #include <PubSubClient.h>
 
