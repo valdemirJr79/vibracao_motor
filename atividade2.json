@@ -1,0 +1,97 @@
+[
+    {
+        "id": "b020f3789c643859",
+        "type": "tab",
+        "label": "Fluxo 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d5505a005ae072b2",
+        "type": "inject",
+        "z": "b020f3789c643859",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "e2de4ee78c316c16"
+            ]
+        ]
+    },
+    {
+        "id": "e2de4ee78c316c16",
+        "type": "function",
+        "z": "b020f3789c643859",
+        "name": "function",
+        "func": "// recebe o payload do nó anteriori (nó inject)\nvar valor = msg.payload; // variável que recebe o valor\nvalor = valor + (Math.random() * 0.2 - 0.1);\n\nmsg.payload = {x: new Date().getTime(), y: valor};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "b47c17edbd6e22ee"
+            ]
+        ]
+    },
+    {
+        "id": "b47c17edbd6e22ee",
+        "type": "switch",
+        "z": "b020f3789c643859",
+        "name": "",
+        "property": "payload.y",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "19ddd70f85b59ace"
+            ]
+        ]
+    },
+    {
+        "id": "19ddd70f85b59ace",
+        "type": "debug",
+        "z": "b020f3789c643859",
+        "name": "debug condição",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 160,
+        "wires": []
+    }
+]
