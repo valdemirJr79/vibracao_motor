@@ -1,0 +1,97 @@
+[
+    {
+        "id": "4177400c7f4f97c0",
+        "type": "tab",
+        "label": "ex JSON",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1c1f4108b3461681",
+        "type": "inject",
+        "z": "4177400c7f4f97c0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "db5cdd7e2a0822a2"
+            ]
+        ]
+    },
+    {
+        "id": "db5cdd7e2a0822a2",
+        "type": "function",
+        "z": "4177400c7f4f97c0",
+        "name": "function 1",
+        "func": "// Receber o playoad do nó anterior (nó inject)\nvar valor = msg.payload;  // variável que recebe o valor\n\nvalor = valor + (Math.random() * 0.2 - 0.1);\n\n//msg.payload = {x: new Date().getTime(), y: valor};\n\nvar msg1 = {\n    payload: { x: new Date().getTime(), y: valor }\n};\n\nif (valor > 10) {\n    var msg2 = {\n        payload: \"⚠️ Alerta: valor acima de 10! (\" + valor.toFixed(2) + \")\"\n    };\n    return [msg1, msg2];\n}\n\n// Caso contrário, só envia o valor\nreturn [msg1,null]\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 140,
+        "wires": [
+            [
+                "09e680593a77845d"
+            ]
+        ]
+    },
+    {
+        "id": "09e680593a77845d",
+        "type": "switch",
+        "z": "4177400c7f4f97c0",
+        "name": "",
+        "property": "payload.y",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 430,
+        "y": 240,
+        "wires": [
+            [
+                "55822ee4ea4b12e6"
+            ]
+        ]
+    },
+    {
+        "id": "55822ee4ea4b12e6",
+        "type": "debug",
+        "z": "4177400c7f4f97c0",
+        "name": "debug condição",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 260,
+        "wires": []
+    }
+]
