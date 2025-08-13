@@ -1,0 +1,52 @@
+[
+    {
+        "id": "0c7cbb9df10cdb5f",
+        "type": "tab",
+        "label": "Plotar texto",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "456cbf43b7271a3c",
+        "type": "inject",
+        "z": "0c7cbb9df10cdb5f",
+        "name": "Temperatura",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "*/1 19 * * 2",
+        "once": true,
+        "onceDelay": "60",
+        "topic": "",
+        "payload": "object",
+        "payloadType": "date",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "49e1769c7393173a"
+            ]
+        ]
+    },
+    {
+        "id": "49e1769c7393173a",
+        "type": "debug",
+        "z": "0c7cbb9df10cdb5f",
+        "name": "debug do nó numero 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 80,
+        "wires": []
+    }
+]
