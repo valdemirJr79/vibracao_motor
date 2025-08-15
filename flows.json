@@ -1,0 +1,505 @@
+[
+    {
+        "id": "29b4a443bcda5283",
+        "type": "tab",
+        "label": "Plotar texto",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e25fdddeb3e46879",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8216cb29c0b848c7",
+        "type": "tab",
+        "label": "Fluxo 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c5743cacce855bfc",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a9080615f98a4d94",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3b8e2179b404cd1f",
+        "type": "ui_group",
+        "name": "Dashboard",
+        "tab": "c5743cacce855bfc",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "254bbcb5644bd7c2",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "dbe0b3f8b4fd2e22",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "fbbcddfc249174df",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "254bbcb5644bd7c2",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "dbe0b3f8b4fd2e22",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "70a092dcb5f951d0",
+        "type": "ui-group",
+        "name": "Tabela 1",
+        "page": "fbbcddfc249174df",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ff29c8cf3e9f3f0a",
+        "type": "ui_tab",
+        "name": "Dashboard 1",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6d2d14c214d04c93",
+        "type": "ui_group",
+        "name": "Grupo 1",
+        "tab": "ff29c8cf3e9f3f0a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6348f272a06b9033",
+        "type": "function",
+        "z": "29b4a443bcda5283",
+        "name": "function 7",
+        "func": "// Recebe o payload do nó anterior (ex: nó inject)\nvar valor = msg.payload;// Simula um sensor com ruído (opcional)\nvalor = valor + (Math.random() *0.2 -0.1); // Adiciona um pequeno ruído\n\n// Cria um novo objeto msg com o valor e o tipo de gráfico\nmsg.payload = {    x: new Date().getTime(), // Timestamp para o eixo X (tempo)\n   y: valor // Valor do sensor para o eixo Y\n};\n// Define o tipo de gráfico como \"line\" (opcional)\n//msg.topic = \"sensor_data\"; // Usado para configurar o gráfico (ex: selecionar o tipo de gráfico)\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 540,
+        "wires": [
+            [
+                "a11d8b7f4f6d3a78"
+            ]
+        ]
+    },
+    {
+        "id": "5d1ab8ae3bb521e7",
+        "type": "inject",
+        "z": "29b4a443bcda5283",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 130,
+        "y": 600,
+        "wires": [
+            [
+                "6348f272a06b9033"
+            ]
+        ]
+    },
+    {
+        "id": "8d773dbb156cb3c1",
+        "type": "debug",
+        "z": "29b4a443bcda5283",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "a11d8b7f4f6d3a78",
+        "type": "switch",
+        "z": "29b4a443bcda5283",
+        "name": "",
+        "property": "payload.y",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 600,
+        "wires": [
+            [
+                "e4e50b5bd874061f",
+                "cefdb03c342cd102"
+            ]
+        ]
+    },
+    {
+        "id": "e4e50b5bd874061f",
+        "type": "debug",
+        "z": "29b4a443bcda5283",
+        "name": "debug switch",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "cefdb03c342cd102",
+        "type": "ui-chart",
+        "z": "29b4a443bcda5283",
+        "group": "70a092dcb5f951d0",
+        "name": "Grafico",
+        "label": "Sensor",
+        "order": 1,
+        "chartType": "line",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "Tempo (s)",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "linear",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "Valor do Sensor",
+        "yAxisProperty": "payload.y",
+        "yAxisPropertyType": "msg",
+        "ymin": "10",
+        "ymax": "10.1",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": "4",
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "1000",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#0084ff"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#ff0000"
+        ],
+        "gridColorDefault": true,
+        "width": "24",
+        "height": "8",
+        "className": "",
+        "interpolation": "linear",
+        "x": 760,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f00c1d3f9f49a1e",
+        "type": "inject",
+        "z": "8216cb29c0b848c7",
+        "name": "Simular valor",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "a3b8f26d8fb4d312"
+            ]
+        ]
+    },
+    {
+        "id": "a3b8f26d8fb4d312",
+        "type": "function",
+        "z": "8216cb29c0b848c7",
+        "name": "Gerar valor com ruído",
+        "func": "var valor = msg.payload;\nvalor = valor + (Math.random() * 0.2 - 0.1);\nmsg.payload = valor;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "dd8abfeaf3cf6b92"
+            ]
+        ]
+    },
+    {
+        "id": "dd8abfeaf3cf6b92",
+        "type": "ui_chart",
+        "z": "8216cb29c0b848c7",
+        "name": "Gráfico de valores",
+        "group": "6d2d14c214d04c93",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Valores simulados",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Aguardando dados...",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "15",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 670,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    }
+]
