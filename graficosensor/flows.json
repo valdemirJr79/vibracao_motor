@@ -1,0 +1,137 @@
+[
+    {
+        "id": "2639c429059b9191",
+        "type": "tab",
+        "label": "Monitoramento Avançado",
+        "disabled": false
+    },
+    {
+        "id": "injector_simulador",
+        "type": "inject",
+        "z": "2639c429059b9191",
+        "name": "Gerar dados a cada 2s",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "gerador_de_dados"
+            ]
+        ]
+    },
+    {
+        "id": "gerador_de_dados",
+        "type": "function",
+        "z": "2639c429059b9191",
+        "name": "Gerar Valor Aleatório (0-100)",
+        "func": "const valor = Math.floor(Math.random() * 100);\nmsg.payload = valor;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1000,
+        "y": 200,
+        "wires": [
+            [
+                "chart_avancado",
+                "checar_valor_alto"
+            ]
+        ]
+    },
+    {
+        "id": "chart_avancado",
+        "type": "ui_chart",
+        "z": "2639c429059b9191",
+        "name": "Histórico de Leituras",
+        "group": "ui_group_grafico",
+        "order": 1,
+        "width": "12",
+        "height": "8",
+        "label": "Leituras do Sensor",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "60",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "colors": [
+            "#007bff"
+        ],
+        "outputs": 1,
+        "x": 1260,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "checar_valor_alto",
+        "type": "switch",
+        "z": "2639c429059b9191",
+        "name": "Acima de 10?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1220,
+        "y": 240,
+        "wires": [
+            [
+                "debug_acima_de_10"
+            ]
+        ]
+    },
+    {
+        "id": "debug_acima_de_10",
+        "type": "debug",
+        "z": "2639c429059b9191",
+        "name": "Debug (Acima de 10)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ui_group_grafico",
+        "type": "ui_group",
+        "name": "Dados do Sensor",
+        "tab": "ui_tab_avancado",
+        "order": 1,
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "ui_tab_avancado",
+        "type": "ui_tab",
+        "name": "Monitoramento Avançado",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
