@@ -1,97 +1,21 @@
-[
-    {
-        "id": "a9782e5545e2655c",
-        "type": "tab",
-        "label": "Exemplo JSON",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "c2d74ba371283a1e",
-        "type": "inject",
-        "z": "a9782e5545e2655c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "2",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "10",
-        "payloadType": "num",
-        "x": 90,
-        "y": 60,
-        "wires": [
-            [
-                "6984947201f11ffd"
-            ]
-        ]
-    },
-    {
-        "id": "6984947201f11ffd",
-        "type": "function",
-        "z": "a9782e5545e2655c",
-        "name": "function 1",
-        "func": "//Recebe o payload do nó anterior(nó inject)\nvar valor =msg.payload;//varivel que recebe o valor\n\nvalor = valor + (Math.random() * 0.2 - 0.1)\n\nmsg.payload = {x:new Date().getTime(), y: valor};\n\nreturn msg",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 260,
-        "y": 200,
-        "wires": [
-            [
-                "63478ceb1c682a81"
-            ]
-        ]
-    },
-    {
-        "id": "63478ceb1c682a81",
-        "type": "switch",
-        "z": "a9782e5545e2655c",
-        "name": "Alerta",
-        "property": "payload.y",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "gt",
-                "v": "10",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 470,
-        "y": 280,
-        "wires": [
-            [
-                "df20f89d06b19ab2"
-            ]
-        ]
-    },
-    {
-        "id": "df20f89d06b19ab2",
-        "type": "debug",
-        "z": "a9782e5545e2655c",
-        "name": "debug condição",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 730,
-        "y": 240,
-        "wires": []
-    }
-]
+{
+  "nome": "João da Silva",
+  "idade": 30,
+  "cidade": "São Paulo",
+  "casado": true,
+  "endereço": {
+    "rua": "Rua das Flores",
+    "número": 123,
+    "bairro": "Centro"
+  },
+  "telefones": [
+    "11 9999-9999",
+    "11 8888-8888"
+  ],
+  "habilidades": [
+    "JavaScript",
+    "Python",
+    "Java"
+  ],
+  "salario": null
+}
