@@ -1,4 +1,4 @@
-#include <WiFi.h>
+#include <WiFI.h>
 #include <ArduinoOTA.h>
 
 const char *ssid = "REDEWORK";
@@ -9,7 +9,7 @@ void setup() {
   Serial.println("Booting");
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
-  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+  // while (WiFi.waitForConnectResult() != WL_CONNECTED) {
     Serial.println("Connection Failed! Rebooting...");
     delay(5000);
     ESP.restart();
@@ -20,7 +20,7 @@ void setup() {
   ArduinoOTA
     .onStart([]() {
       String type;
-      if (ArduinoOTA.getCommand() == U_FLASH) {
+      if (ArduinoOT.getCommand() == U_FLASH) {
         type = "sketch";
       } else {  // U_SPIFFS
         type = "filesystem";
