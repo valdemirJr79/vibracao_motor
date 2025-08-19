@@ -7,7 +7,7 @@
 #define WIFI_TIMEOUT 15000   // 15 segundos de timeout
 
 const char* ssid = "redework";
-const char* passwords[] = {"Acessonetos", "Acessoneto5"};
+const char* passwords[] = {"Acessoneto5"};
 const int passwordCount = 2;
 
 ESP8266WebServer server(80);
