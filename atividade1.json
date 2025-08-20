@@ -1,0 +1,52 @@
+[
+    {
+        "id": "d3bc040b3425b2bb",
+        "type": "tab",
+        "label": "Plotar texto",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e412d7b3ba676ec6",
+        "type": "inject",
+        "z": "d3bc040b3425b2bb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "*/1 19 * * 2",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "1bc3e0da09da5424"
+            ]
+        ]
+    },
+    {
+        "id": "1bc3e0da09da5424",
+        "type": "debug",
+        "z": "d3bc040b3425b2bb",
+        "name": "debug do nó teste",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 160,
+        "wires": []
+    }
+]
