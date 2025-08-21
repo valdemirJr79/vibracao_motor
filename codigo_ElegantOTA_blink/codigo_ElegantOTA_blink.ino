@@ -13,7 +13,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+    delay(1000);
     Serial.print(".");
   }
   Serial.println("Conectado à rede Wi-Fi");
@@ -59,6 +59,6 @@ void loop() {
 
   digitalWrite(LED_BUILTIN, LOW); // Desliga o LED
   Serial.println("LED Apagado");
-  delay(3000); // Aguarda 1 segundo
+  delay(1000); // Aguarda 1 segundo
 
 }
