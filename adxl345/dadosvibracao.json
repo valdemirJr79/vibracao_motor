@@ -1,0 +1,130 @@
+[
+    {
+        "id": "d7dac298a99adbe5",
+        "type": "tab",
+        "label": "dadosvibracao",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b4136fb87b0731e8",
+        "type": "inject",
+        "z": "d7dac298a99adbe5",
+        "name": "Gerar Leitura",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "afa71c442af406f0"
+            ]
+        ]
+    },
+    {
+        "id": "afa71c442af406f0",
+        "type": "function",
+        "z": "d7dac298a99adbe5",
+        "name": "Simular ADXL345",
+        "func": "// Simulação de vibração do ADXL345 em 3 eixos\nlet vibX = (Math.random() * 2 - 1).toFixed(2);   // Eixo X (-1 a 1 m/s²)\nlet vibY = (Math.random() * 2 - 1).toFixed(2);   // Eixo Y (-1 a 1 m/s²)\nlet vibZ = (9.81 + (Math.random() * 0.5 - 0.25)).toFixed(2); // Eixo Z próximo da gravidade\n\n// Enviar três mensagens separadas (para o gráfico identificar cada série)\nlet msgs = [];\nmsgs.push({ topic: \"X\", payload: parseFloat(vibX) });\nmsgs.push({ topic: \"Y\", payload: parseFloat(vibY) });\nmsgs.push({ topic: \"Z\", payload: parseFloat(vibZ) });\n\nreturn [msgs];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 220,
+        "wires": [
+            [
+                "502b81def7bdacb5",
+                "639e1331504915a9"
+            ]
+        ]
+    },
+    {
+        "id": "502b81def7bdacb5",
+        "type": "ui_chart",
+        "z": "d7dac298a99adbe5",
+        "name": "Gráfico Vibração",
+        "group": "d0378d10a7cde599",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Simulação ADXL345",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-2",
+        "ymax": "12",
+        "removeOlder": "60",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": true,
+        "className": "",
+        "x": 650,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "639e1331504915a9",
+        "type": "debug",
+        "z": "d7dac298a99adbe5",
+        "name": "Debug Valores",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d0378d10a7cde599",
+        "type": "ui_group",
+        "name": "Gráficos",
+        "tab": "b82971ace72529cc",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b82971ace72529cc",
+        "type": "ui_tab",
+        "name": "Iot",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]

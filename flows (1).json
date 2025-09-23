@@ -1,0 +1,106 @@
+[
+    {
+        "id": "6348f272a06b9033",
+        "type": "function",
+        "z": "259e73f9db21c1d2",
+        "name": "function 7",
+        "func": "// Recebe o payload do nó anterior (ex: nó inject)\nvar valor = msg.payload;// Simula um sensor com ruído (opcional)\nvalor = valor + (Math.random() * 0.2 - 0.1); // Adiciona um pequeno ruído\n\n// Cria um novo objeto msg com o valor e o tipo de gráfico\nmsg.payload = {    x: new Date().getTime(), // Timestamp para o eixo X (tempo)\n   y: valor // Valor do sensor para o eixo Y\n};\n// Define o tipo de gráfico como \"line\" (opcional)\n//msg.topic = \"sensor_data\"; // Usado para configurar o gráfico (ex: selecionar o tipo de gráfico)\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 160,
+        "wires": [
+            [
+                "8d773dbb156cb3c1",
+                "a11d8b7f4f6d3a78"
+            ]
+        ]
+    },
+    {
+        "id": "5d1ab8ae3bb521e7",
+        "type": "inject",
+        "z": "259e73f9db21c1d2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "6348f272a06b9033"
+            ]
+        ]
+    },
+    {
+        "id": "8d773dbb156cb3c1",
+        "type": "debug",
+        "z": "259e73f9db21c1d2",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a11d8b7f4f6d3a78",
+        "type": "switch",
+        "z": "259e73f9db21c1d2",
+        "name": "",
+        "property": "payload.y",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "10",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 220,
+        "wires": [
+            [
+                "e4e50b5bd874061f"
+            ]
+        ]
+    },
+    {
+        "id": "e4e50b5bd874061f",
+        "type": "debug",
+        "z": "259e73f9db21c1d2",
+        "name": "debug switch",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 260,
+        "wires": []
+    }
+]
