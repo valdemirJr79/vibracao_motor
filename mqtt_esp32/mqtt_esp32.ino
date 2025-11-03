@@ -25,7 +25,7 @@
 
 const char* ssid = "REDEWORK";
 const char* password = "Acessonet05";
-const char* mqtt_server = "192.168.1.4";
+const char* mqtt_server = "192.168.1.2";
 
 
 WiFiClient espClient;
